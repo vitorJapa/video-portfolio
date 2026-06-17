@@ -87,7 +87,7 @@ nav {
 .content {
   flex: 1;
   min-width: 0;
-  padding: 40px 40px 0 0;
+  padding: 40px 40px 0 40px;
   border-left: 1px solid var(--border);
 }
 
@@ -216,6 +216,21 @@ nav {
   font-size: 0.88rem;
   color: var(--text-dim);
   line-height: 1.5;
+}
+
+.card-gif {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 12px;
+  display: block;
+}
+
+.quote-gif {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 16px;
+  display: block;
 }
 
 .about-quote {
@@ -398,5 +413,10 @@ footer {
   .content {
     border-left: none;
     padding: 24px 16px 0;
+  }
+
+  .header-banner img {
+    height: auto;
+    object-fit: contain;
   }
 }
