@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Editing Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-banner">
+    <img src="images/header.png" alt="Vitor — Video Editor">
+  </div>
+</header>
+
+<main>
+  <nav>
+    <ul class="nav-menu">
+      <li class="filter-btn active" data-filter="about">About Me</li>
+      <li class="filter-btn" data-filter="all">All</li>
+      <li class="filter-btn" data-filter="long">Long Videos</li>
+      <li class="filter-btn" data-filter="short">Shorts</li>
+      <li class="filter-btn" data-filter="contact">Contact</li>
+    </ul>
+  </nav>
+
+  <div class="content">
+  <section id="about-section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-bio">
+      <p>
+        I'm a video editor focused on helping creators and brands grow on YouTube and social media.
+        I edit long-format videos and short-form content (Shorts, Reels, TikToks) using CapCut,
+        with a strong eye for pacing, captions, and hooks that keep viewers watching.
+      </p>
+      <p>
+        What sets me apart is my tech background — after 6+ years in IT, I bring discipline,
+        fast turnaround, and clear communication to every project. No missed deadlines, no
+        back-and-forth confusion.
+      </p>
+      <p>
+        Whether you need a polished YouTube video or scroll-stopping Shorts, I'm here to make
+        your content stand out. Let's work together!
+      </p>
+    </div>
+  </section>
+
+  <section id="long-section" style="display:none">
+    <h2 class="section-title">Long Videos</h2>
+    <div class="grid" id="long-grid"></div>
+  </section>
+
+  <section id="short-section" style="display:none">
+    <h2 class="section-title">Shorts</h2>
+    <div class="grid shorts" id="short-grid"></div>
+  </section>
+
+  <section id="contact-section" style="display:none">
+    <h2 class="section-title">Contact</h2>
+    <form class="contact-form" id="contact-form">
+      <h3>Get in touch</h3>
+      <div data-fs-success class="form-success"></div>
+      <div data-fs-error class="form-error"></div>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" data-fs-field required>
+      <span data-fs-error="name" class="field-error"></span>
+
+      <label for="email">Your email</label>
+      <input type="email" id="email" name="email" data-fs-field required>
+      <span data-fs-error="email" class="field-error"></span>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" data-fs-field required></textarea>
+      <span data-fs-error="message" class="field-error"></span>
+
+      <button type="submit" data-fs-submit-btn>Send</button>
+    </form>
+  </section>
+  </div>
+</main>
+
+<footer>
+  Made by Vitor Kihara •
+  <a href="https://www.youtube.com/@RotadaTacaa" target="_blank" style="color:inherit">YouTube</a>
+  •
+  <a href="https://www.linkedin.com/in/vitorkihara/?locale=en" target="_blank" style="color:inherit">LinkedIn</a>
+</footer>
+
+<div class="modal-overlay hidden" id="modal-overlay">
+  <div class="modal-content" id="modal-content">
+    <button class="modal-close" id="modal-close">&times;</button>
+    <iframe id="modal-player" class="modal-player" src="" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script src="videos.js"></script>
+<script src="script.js"></script>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqzkldg' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>

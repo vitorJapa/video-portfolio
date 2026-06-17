@@ -1,0 +1,357 @@
+:root {
+  --bg: #0d0d10;
+  --bg-card: #17171c;
+  --text: #f2f2f5;
+  --text-dim: #9a9aa5;
+  --accent: #ff3b3b;
+  --border: #2a2a31;
+  --sidebar: 220px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── Header / Banner ── */
+header {
+  border-bottom: 1px solid var(--border);
+}
+
+.header-banner {
+  width: 100%;
+}
+
+.header-banner img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ── Main: sidebar + content ── */
+main {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0 80px;
+}
+
+/* ── Sidebar nav ── */
+nav {
+  position: sticky;
+  top: 24px;
+  width: var(--sidebar);
+  flex-shrink: 0;
+  padding: 32px 24px 24px;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-menu .filter-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-menu .filter-btn:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+
+.nav-menu .filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Content area ── */
+.content {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 40px 0 0;
+  border-left: 1px solid var(--border);
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin: 0 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Video grids ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.grid.shorts {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+
+.grid.shorts .thumb-wrap {
+  aspect-ratio: 9 / 16;
+}
+
+.thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+}
+
+.play-icon::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 22px solid #fff;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+  opacity: 0.9;
+}
+
+.card-body {
+  padding: 14px 16px;
+}
+
+.card-body h3 {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+}
+
+.card-body p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+.empty {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* ── About ── */
+.about-bio p {
+  color: var(--text-dim);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0 0 16px;
+}
+
+.about-bio code {
+  background: var(--bg-card);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* ── Contact form ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 480px;
+}
+
+.contact-form h3 {
+  margin: 0 0 8px;
+}
+
+.contact-form label {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form button {
+  margin-top: 8px;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
+
+.form-success {
+  display: none;
+  background: #1b3a25;
+  border: 1px solid #2f6b3f;
+  color: #9fe5ae;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.form-success:not(:empty) { display: block; }
+
+.form-error {
+  display: none;
+  background: #3a1b1b;
+  border: 1px solid #6b2f2f;
+  color: #e59f9f;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.form-error:not(:empty) { display: block; }
+
+.field-error {
+  color: var(--accent);
+  font-size: 0.78rem;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--accent);
+}
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 24px;
+}
+
+.modal-overlay.hidden { display: none; }
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+}
+
+.modal-content.short { max-width: 380px; }
+
+.modal-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}
+
+.modal-content.short .modal-player { aspect-ratio: 9 / 16; }
+
+.modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+  }
+
+  nav {
+    position: static;
+    width: 100%;
+    padding: 20px 16px 12px;
+  }
+
+  .content {
+    border-left: none;
+    padding: 24px 16px 0;
+  }
+}
