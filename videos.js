@@ -10,30 +10,30 @@ const VIDEOS = [
     title: "Long Video",
     youtubeId: "KeV8fSbF9UE",
     type: "long",
-    description: "Short description of the editing done in this video."
+    description: "Vlog-style edit covering the best spots to watch soccer games in Vancouver — fast cuts, dynamic captions, and a 20-30s hook to keep viewers hooked from the start."
   },
   {
     title: "Short",
     youtubeId: "TIAKyapE5D4",
     type: "short",
-    description: "Short description of the short."
+    description: "Fast-paced soccer highlight edit with dynamic captions and scoreboard overlays to maximize engagement."
   },
   {
     title: "Short",
     youtubeId: "7B5qzAltKA8",
     type: "short",
-    description: "Short description of the short."
+    description: "Cinematic short covering the World Cup opening ceremony — bold captions and viral hook to grab attention in the first 3 seconds."
   },
   {
     title: "Short",
     youtubeId: "QNIIrSPR7sc",
     type: "short",
-    description: "Short description of the short."
+    description: "Viral-style short with strong hook and on-screen text driving curiosity and watch time."
   },
   {
     title: "Short",
-    youtubeId: "fAHhP4DHtYo",
+    youtubeId: "RrWmsH3Q41o",
     type: "short",
-    description: "Short description of the short."
+    description: "Talking-head short with animated captions and split-screen to simplify information and keep viewers watching."
   }
 ];
