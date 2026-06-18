@@ -10,16 +10,31 @@ const modalPlayer = document.getElementById("modal-player");
 const modalClose = document.getElementById("modal-close");
 const filterBtns = document.querySelectorAll(".filter-btn");
 
-function thumbUrl(id) {
-  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+function thumbUrl(video) {
+  if (!video.platform || video.platform === "youtube") {
+    return `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+  }
+  return null; // non-YouTube: use placeholder
 }
+
+const PLATFORM_LABELS = { instagram: "Instagram Reel", tiktok: "TikTok" };
+const PLATFORM_COLORS = { instagram: "linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)", tiktok: "linear-gradient(135deg,#010101,#69c9d0)" };
 
 function createCard(video) {
   const card = document.createElement("div");
   card.className = "card";
+  const platform = video.platform || "youtube";
+  const thumb = thumbUrl(video);
+
+  const thumbHtml = thumb
+    ? `<img src="${thumb}" alt="${video.title}" loading="lazy">`
+    : `<div class="platform-placeholder" style="background:${PLATFORM_COLORS[platform]}">
+         <span class="platform-label">${PLATFORM_LABELS[platform] || platform}</span>
+       </div>`;
+
   card.innerHTML = `
     <div class="thumb-wrap">
-      <img src="${thumbUrl(video.youtubeId)}" alt="${video.title}" loading="lazy">
+      ${thumbHtml}
       <div class="play-icon"></div>
     </div>
     <div class="card-body">
@@ -51,8 +66,15 @@ function render() {
   }
 }
 
+function embedUrl(video) {
+  const platform = video.platform || "youtube";
+  if (platform === "instagram") return `https://www.instagram.com/p/${video.videoId}/embed/`;
+  if (platform === "tiktok")    return `https://www.tiktok.com/embed/v2/${video.videoId}`;
+  return `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`;
+}
+
 function openModal(video) {
-  modalPlayer.src = `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`;
+  modalPlayer.src = embedUrl(video);
   modalContent.classList.toggle("short", video.type === "short");
   modalOverlay.classList.remove("hidden");
 }

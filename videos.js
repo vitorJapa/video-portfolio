@@ -19,6 +19,20 @@ const VIDEOS = [
     description: "Fast-paced soccer highlight edit with dynamic captions and scoreboard overlays to maximize engagement."
   },
   {
+    title: "Reel",
+    platform: "instagram",
+    videoId: "DZI6L7yKFD9",
+    type: "short",
+    description: "Instagram Reel edit — scroll-stopping hook and dynamic pacing to maximize reach and saves."
+  },
+  {
+    title: "TikTok",
+    platform: "tiktok",
+    videoId: "7652221320582663432",
+    type: "short",
+    description: "TikTok edit with strong hook, on-screen text, and fast cuts built for the For You Page algorithm."
+  },
+  {
     title: "Short",
     youtubeId: "7B5qzAltKA8",
     type: "short",
