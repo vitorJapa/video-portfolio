@@ -83,3 +83,26 @@ filterBtns.forEach(btn => {
 });
 
 render();
+
+// Force GIFs to loop (re-trigger when scrolled into view)
+function setupGifLooping(img, interval) {
+  const src = img.src;
+  const restart = () => { img.src = ''; img.src = src; };
+
+  new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) restart();
+  }, { threshold: 0.3 }).observe(img);
+
+  setInterval(() => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) restart();
+  }, interval);
+}
+
+const editsGif = document.querySelector('.card-gif[src*="edits"]');
+const hooksGif = document.querySelector('.card-gif[src*="hooks"]');
+const stwGif   = document.querySelector('.quote-gif');
+
+if (editsGif) setupGifLooping(editsGif, 11000);
+if (hooksGif) setupGifLooping(hooksGif, 11000);
+if (stwGif)   setupGifLooping(stwGif, 9000);
