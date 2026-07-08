@@ -123,11 +123,11 @@ function playSFX(type) {
   if (btn) btn.classList.add('playing');
 
   const fileMap = {
-    whoosh: 'Sons/Typing Sound.mp3',
+    whoosh: 'Sons/typing-sound.mp3',
     pop:    'Sons/POP.mp3',
     amongus:'Sons/among-us.mp3',
-    camera: 'Sons/Camera Flash.m4a',
-    riser:  'Sons/cinematic suspense riser.mp3',
+    camera: 'Sons/camera-flash.m4a',
+    riser:  'Sons/riser.mp3',
   };
 
   if (fileMap[type]) {
@@ -153,10 +153,14 @@ function setupGifLooping(img, interval) {
   }, interval);
 }
 
-const editsGif = document.querySelector('.card-gif[src*="edits"]');
-const hooksGif = document.querySelector('.card-gif[src*="hooks"]');
-const stwGif   = document.querySelector('.quote-gif');
+const editsGif       = document.querySelector('.card-gif[src*="edits"]');
+const hooksGif       = document.querySelector('.card-gif[src*="hooks"]');
+const colorGif       = document.querySelector('.card-gif[src*="color-comparison"]');
+const zoomInGif      = document.querySelector('.card-gif[src*="zoom-in"]');
+const stwGif         = document.querySelector('.quote-gif');
 
-if (editsGif) setupGifLooping(editsGif, 11000);
-if (hooksGif) setupGifLooping(hooksGif, 11000);
-if (stwGif)   setupGifLooping(stwGif, 9000);
+if (editsGif)  setupGifLooping(editsGif, 11000);
+if (hooksGif)  setupGifLooping(hooksGif, 11000);
+if (colorGif)  setupGifLooping(colorGif, 8000);
+if (zoomInGif) setupGifLooping(zoomInGif, 6000);
+if (stwGif)    setupGifLooping(stwGif, 9000);
