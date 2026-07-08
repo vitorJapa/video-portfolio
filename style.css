@@ -234,6 +234,34 @@ nav {
   line-height: 1.5;
 }
 
+.sfx-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.sfx-btn {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.sfx-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.sfx-btn.playing {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .card-gif {
   width: 100%;
   border-radius: 8px;

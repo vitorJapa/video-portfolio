@@ -106,6 +106,38 @@ filterBtns.forEach(btn => {
 
 render();
 
+// Sound Effects player
+const sfxAudio = {};
+
+function playSFX(type) {
+  const btn = [...document.querySelectorAll('.sfx-btn')].find(b => b.onclick?.toString().includes(`'${type}'`));
+
+  // If already playing, stop it
+  if (sfxAudio[type] && !sfxAudio[type].paused) {
+    sfxAudio[type].pause();
+    sfxAudio[type].currentTime = 0;
+    if (btn) btn.classList.remove('playing');
+    return;
+  }
+
+  if (btn) btn.classList.add('playing');
+
+  const fileMap = {
+    whoosh: 'Sons/Typing Sound.mp3',
+    pop:    'Sons/POP.mp3',
+    amongus:'Sons/among-us.mp3',
+    camera: 'Sons/Camera Flash.m4a',
+    riser:  'Sons/cinematic suspense riser.mp3',
+  };
+
+  if (fileMap[type]) {
+    if (!sfxAudio[type]) sfxAudio[type] = new Audio(fileMap[type]);
+    sfxAudio[type].currentTime = 0;
+    sfxAudio[type].play();
+    sfxAudio[type].onended = () => { if (btn) btn.classList.remove('playing'); };
+  }
+}
+
 // Force GIFs to loop (re-trigger when scrolled into view)
 function setupGifLooping(img, interval) {
   const src = img.src;

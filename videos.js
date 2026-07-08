@@ -13,12 +13,6 @@ const VIDEOS = [
     description: "Vlog-style edit covering the best spots to watch soccer games in Vancouver — fast cuts, dynamic captions, and a 20-30s hook to keep viewers hooked from the start."
   },
   {
-    title: "Short",
-    youtubeId: "TIAKyapE5D4",
-    type: "short",
-    description: "Fast-paced soccer highlight edit with dynamic captions and scoreboard overlays to maximize engagement."
-  },
-  {
     title: "Reel",
     platform: "instagram",
     videoId: "DZI6L7yKFD9",
@@ -49,5 +43,11 @@ const VIDEOS = [
     youtubeId: "RrWmsH3Q41o",
     type: "short",
     description: "Talking-head short with animated captions and split-screen to simplify information and keep viewers watching."
+  },
+  {
+    title: "Short",
+    youtubeId: "gkIyc_bDhDQ",
+    type: "short",
+    description: "Fast-paced soccer highlight edit with dynamic captions, color correction and sound effects to maximize engagement."
   }
 ];

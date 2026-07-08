@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Video Editing Portfolio</title>
 <link rel="stylesheet" href="style.css">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BPQF27FKXG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BPQF27FKXG');
+</script>
 </head>
 <body>
 
@@ -46,6 +54,22 @@
           <div class="about-card-title">👁️ Retention focus</div>
           <p>Hooks, pacing, and captions built to maximize watch time and keep viewers watching.</p>
           <img src="images/hooks.gif" alt="Hooks example" class="card-gif">
+        </div>
+        <div class="about-card">
+          <div class="about-card-title">🔍 Zoom Ins</div>
+          <p>Professional zoom ins to add depth and energy — keeping videos dynamic instead of flat.</p>
+          <video class="card-gif" src="Zoom ins.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="about-card sound-card">
+          <div class="about-card-title">🔊 Sound Effects</div>
+          <p>Strategic audio cues that trigger emotion and keep viewers glued to the screen.</p>
+          <div class="sfx-list">
+            <button class="sfx-btn" onclick="playSFX('whoosh')">▶ Typing</button>
+            <button class="sfx-btn" onclick="playSFX('pop')">▶ Pop</button>
+            <button class="sfx-btn" onclick="playSFX('amongus')">▶ Among Us</button>
+            <button class="sfx-btn" onclick="playSFX('camera')">▶ Camera</button>
+            <button class="sfx-btn" onclick="playSFX('riser')">▶ Riser</button>
+          </div>
         </div>
       </div>
 
